@@ -66,6 +66,10 @@ jobs:
     - name: docker push
       run: |
         docker push srikanthmadhavarapu/boardgame:latest
+
+    - name: deploy conatiner
+      run: |
+        docker run -d --name Boardgame -p 8080:8080 srikanthmadhavarapu/boardgame:latest
          
       
     
