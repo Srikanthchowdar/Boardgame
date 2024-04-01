@@ -52,11 +52,11 @@ jobs:
 
     - name: build docker images
       run: |
-        docker build -t srikanthmadhavarapu/Boardgame:latest .
+        docker build -t srikanthmadhavarapu/boardgame:latest .
 
     - name: trivy image scan
       run: |
-        trivy image --format table -o trivy-image-report.html srikanthmadhavarapu/Boardgame:latest
+        trivy image --format table -o trivy-image-report.html srikanthmadhavarapu/boardgame:latest
     - name: docker login
       uses: docker/login-action@v3
       with:
@@ -65,7 +65,7 @@ jobs:
 
     - name: docker push
       run: |
-        docker push srikanthmadhavarapu/Boardgame:latest
+        docker push srikanthmadhavarapu/boardgame:latest
          
       
     
